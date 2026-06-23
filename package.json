@@ -1,0 +1,51 @@
+{
+  "name": "codevector_task",
+  "version": "1.0.0",
+  "description": "Product catalog API with cursor-based pagination",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:import-csv": "node prisma/import-flipkart.js",
+    "db:reset": "prisma migrate reset --force",
+    "postinstall": "prisma generate"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pratiksha-Kanoja/CodeVector_Task.git"
+  },
+  "keywords": [
+    "express",
+    "prisma",
+    "supabase",
+    "postgresql",
+    "cursor-pagination"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Pratiksha-Kanoja/CodeVector_Task/issues"
+  },
+  "homepage": "https://github.com/Pratiksha-Kanoja/CodeVector_Task#readme",
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.2.0",
+    "prisma": "^6.19.3",
+    "zod": "^4.4.3"
+  }
+}
