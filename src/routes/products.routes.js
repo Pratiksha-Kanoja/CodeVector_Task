@@ -7,10 +7,12 @@ const productsController = require('../controllers/products.controller');
 
 const router = express.Router();
 
-router.get(
-  '/',
+const listProductsHandlers = [
   validate(productsController.listProductsQuerySchema),
   asyncHandler(productsController.listProducts),
-);
+];
+
+// Express 5 matches /products and /products/ separately when mounted as a sub-router.
+router.get(['/', ''], ...listProductsHandlers);
 
 module.exports = router;
